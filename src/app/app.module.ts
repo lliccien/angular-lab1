@@ -11,9 +11,11 @@ import { environment } from '../environments/environment';
 
 // Modules
 import { UsersModule } from './users/users.module';
+import { MaterialModule } from './material.module';
 
 // Components
 import { AppComponent } from './app.component';
+
 
 
 
@@ -29,7 +31,8 @@ import { AppComponent } from './app.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
