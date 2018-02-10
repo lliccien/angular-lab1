@@ -13,8 +13,12 @@ import { environment } from '../environments/environment';
 import { UsersModule } from './users/users.module';
 import { MaterialModule } from './material.module';
 
+// Services
+import { DirectoryService } from './services/directory.service';
+
 // Components
 import { AppComponent } from './app.component';
+
 
 
 
@@ -34,7 +38,9 @@ import { AppComponent } from './app.component';
     AngularFireStorageModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    DirectoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-
-import { AngularFirestore } from 'angularfire2/firestore';
+import { DirectoryService } from './services/directory.service';
 import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  users: Observable<any[]>;
+  users: any;
 
-  constructor(firestore: AngularFirestore) {
-    this.users = firestore.collection('users').valueChanges();
+  constructor( private directory: DirectoryService) {
+   this.users = this.directory.getUsers();
   }
 }
