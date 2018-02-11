@@ -12,12 +12,14 @@ import { environment } from '../environments/environment';
 // Modules
 import { UsersModule } from './users/users.module';
 import { MaterialModule } from './material.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // Services
 import { DirectoryService } from './services/directory.service';
 
 // Components
 import { AppComponent } from './app.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
@@ -27,8 +29,10 @@ import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
+    DialogComponent,
 
   ],
+  entryComponents: [DialogComponent],
   imports: [
     BrowserModule,
     UsersModule,
@@ -36,7 +40,8 @@ import { AppComponent } from './app.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    MaterialModule
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DirectoryService
